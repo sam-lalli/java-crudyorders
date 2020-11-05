@@ -13,6 +13,12 @@ public interface CustomersService
 
     List<Customers> findCustomersByLikeName(String name);
 
-    Customers save(Customers customers);
+    Customers save(Customers customers); //POST
+
+    void delete(long id); //DELETE
+
+    Customers update(Customers customers, long id); //PATCH or PUT
+
+    void deleteAllCustomers();
 
 }

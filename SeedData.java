@@ -65,6 +65,9 @@ public class SeedData
     @Override
     public void run(String[] args) throws
             Exception {
+        //customerServices.deleteAllcustomers();
+        //paymentServices.deleteAllPayments();
+
         Payment pay1 = new Payment("Cash");
         Payment pay2 = new Payment("Gift Card");
         Payment pay3 = new Payment("Credit Card");

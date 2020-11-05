@@ -21,10 +21,28 @@ public class Customers {
     private String workingarea;
     private String custcountry;
     private String grade;
+
+    @JsonIgnoreProperties(value = "hasValueForOpeningamt", allowSetters = true)
+    @Transient
+    public boolean hasValueForOpeningamt = false;
     private double openingamt;
+
+    @JsonIgnoreProperties(value = "hasValueForReceiveamt", allowSetters = true)
+    @Transient
+    public boolean hasValueForReceiveamt = false;
     private double receiveamt;
+
+    @JsonIgnoreProperties(value = "hasValueForPaymentamt", allowSetters = true)
+    @Transient
+    public boolean hasValueForPaymentamt = false;
     private double paymentamt;
+
+    @JsonIgnoreProperties(value = "hasValueForOutstandingamt", allowSetters = true)
+    @Transient
+    public boolean hasValueForOutstandingamt = false;
     private double outstandingamt;
+
+
     private String phone;
 
     //many customers to one agent
@@ -106,6 +124,7 @@ public class Customers {
     }
 
     public void setOpeningamt(double openingamt) {
+        hasValueForOpeningamt = true;
         this.openingamt = openingamt;
     }
 
@@ -114,6 +133,7 @@ public class Customers {
     }
 
     public void setReceiveamt(double receiveamt) {
+        hasValueForReceiveamt = true;
         this.receiveamt = receiveamt;
     }
 
@@ -122,6 +142,7 @@ public class Customers {
     }
 
     public void setPaymentamt(double paymentamt) {
+        hasValueForPaymentamt = true;
         this.paymentamt = paymentamt;
     }
 
@@ -130,6 +151,7 @@ public class Customers {
     }
 
     public void setOutstandingamt(double outstandingamt) {
+        hasValueForOutstandingamt = true;
         this.outstandingamt = outstandingamt;
     }
 

@@ -14,9 +14,13 @@ public class PaymentsServiceImpl implements PaymentsService {
     PaymentsRepository paymentrepo;
 
     @Transactional
-
     @Override
     public Payments save(Payments payments) {
         return paymentrepo.save(payments);
+    }
+
+    @Override
+    public void deleteAllPayments() {
+        paymentrepo.deleteAll();
     }
 }
